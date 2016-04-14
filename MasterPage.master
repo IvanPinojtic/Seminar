@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Sklad</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+}
+ul li a {
+    width:20%;
+    float:left;
+
+}
+a:hover {background-color: #111;}
+#dot{
+    width:20%;
+    float:left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+}
+
+
+</style>
+</head>
+<body style="background: url('../Img/Nutra.jpg') no-repeat center fixed; background-size: cover;margin:0;">
+    <form id="form1" runat="server">
+        <div>
+            <ul>
+                <li id="dot">
+                    <asp:LoginName ID="loginName1" runat="server" FormatString="Korisnik: {0}" />
+                </li>
+                <li><a href="Staff.aspx">Zaposlenici</a></li>
+                <li><a href="Stanje.aspx">Stanje</a></li>
+                <li>
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/Login.aspx" />
+                </li>
+            </ul>
+        </div>
+        <div style="background-color:darkslategrey; width: 500px; position: absolute; top:50px;left: 50%; transform: translate(-50%,0%);">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer style="text-align: right; position: absolute; bottom: 10px; width: 95%; font-weight: bold; font-variant: normal; color: #FFFFFF;">
+        <p>Ivan Pinojtić</p>
+        <p>ipinojtic@tvz.hr</p>
+    </footer>
+</body>
+</html>
